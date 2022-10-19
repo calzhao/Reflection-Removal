@@ -14,19 +14,19 @@ The implementation and improvement of CVPR 2019 paper "[Single Image Reflection 
 
 ## Folder list
 
-* ERRNet-ref 中包含经过我们微调的ERRNet原始代码
-* ERRNet-mydata 中包含调用我们自己生成的数据集训练模型的代码（生成数据的代码在sync_model文件夹中，这里直接调用了生成好的数据集）
-* ERRNet-TR 中包含我们提出的ERRNet-TR网络模型及其相关的训练/测试代码
-* ERRNet-TR-lite 中包含我们提出的ERRNet-TR-lite 网络模型及其相关的训练/测试代码
-* sync_model 中包含各种我们自己写的生成合成数据的代码，且内涵一个生成样例用以展示
+* `ERRNet-ref` folder contains the debugged original code of ERRNet 
+* `ERRNet-mydata` folder contains the code for training using our own synthetic data (Code for data generating is in `sync_model` folder）
+* `ERRNet-TR` folder contains our newly proposed network: ERRNet-TR and the relating training and test code
+* `ERRNet-TR-lite`  folder contains our newly proposed network: ERRNet-TR-lite and the relating training and test code
+* `sync_model` folder contains code for data generating and a data sample
 
 
 
 ## Quick Start
 
 #### Testing
- * 进入相应文件夹后用命令行运行 ```python test_errnet.py --name errnet -r --icnn_path checkpoints/errnet/ourmodel.pt --hyper --gpu_ids -1``` (gpu_ids=-1表示用cpu进行测试)
+ * Running the following command after entering the corresponding folder ```python test_errnet.py --name errnet -r --icnn_path checkpoints/errnet/ourmodel.pt --hyper --gpu_ids -1``` (gpu_ids=-1 means using CPU to test)
 
 #### Training
-* 进入相应文件夹后用命令行运行 ```python train_errnet.py --name errnet --hyper``` （需要预先在相应文件夹中的reflection_data文件夹下面准备好训练数据集）
-* 查看 ```options/errnet/train_options.py``` 以获得更多训练选项
+* Running the following command after entering the corresponding folder ```python train_errnet.py --name errnet --hyper``` （Need to prepare the dataset in the folder `reflection_data` before training）
+* Viewing ```options/errnet/train_options.py``` for more training options
